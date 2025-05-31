@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      transition: background-color 0.3s;
+    }
+
+    nav.scrolled {
+      background-color: #111;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(to right, #007991, #78ffd6);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    header button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      background-color: white;
+      color: #007991;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    header button:hover {
+      background-color: #e0f7fa;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: #444;
+        display: none;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 22px;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">MyLanding</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <h1>Welcome to Ratna's Landing Page</h1>
+    <p>Clean, responsive, and interactive - everything you need in a modern landing page.
+        
+        I'm a web developer with a passion for creating responsive, user-friendly websites and applications. I specialize in front-end development using HTML, CSS, JavaScript, and frameworks like React, and also have experience with back-end technologies such as Node.js and Express. My goal is to build clean, efficient, and visually appealing digital experiences that solve real-world problems.</p>
+    <button onclick="alert('Thank you for getting started!')">Get Started</button>
+  </header>
+
+  <section id="features">
+    <h2>Features</h2>
+    <p>This page is built with HTML, CSS, and JavaScript in a single file. It's lightweight and responsive.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: ratnasagarpatra7978@gmail.com | Phone: +91 7978935800</p>
+  </section>
+
+  <footer>
+    &copy; 2025 MyLanding. All rights reserved.
+  </footer>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    function toggleMenu() {
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
